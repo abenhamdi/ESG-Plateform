@@ -124,6 +124,134 @@ class Metrics
 
             return numerator / denominator;
         }
+        public static double CalculateEstimatedEmissionsPercentage(double[] weights, int[] estimatedEmissionsFactors)
+        {
+            double numerator = 0;
+            double denominator = 0;
+
+            for (int i = 0; i < weights.Length; i++)
+            {
+                numerator += weights[i] * estimatedEmissionsFactors[i];
+                denominator += weights[i];
+            }
+
+            return numerator / denominator;
+        }
+
+        public static double CalculateWeightedAverageCarbonIntensity(double[] weights, double[] carbonEmissionsScope12s, double[] sales)
+        {
+            double numerator = 0;
+            double denominator = 0;
+
+            for (int i = 0; i < weights.Length; i++)
+            {
+                numerator += weights[i] * carbonEmissionsScope12s[i] / sales[i];
+                denominator += weights[i];
+            }
+
+            return numerator / denominator;
+        }
+
+        public static double CalculateFossilFuelReservesPercentage(double[] weights, int[] fossilFuelReservesFactors)
+        {
+            double numerator = 0;
+            double denominator = 0;
+
+            for (int i = 0; i < weights.Length; i++)
+            {
+                numerator += weights[i] * fossilFuelReservesFactors[i];
+                denominator += weights[i];
+            }
+
+            return numerator / denominator;
+        }
+
+        public static double CalculateHighClimateImpactSectorPercentage(double[] weights, int[] highClimateImpactSectorFactors)
+        {
+            double numerator = 0;
+            double denominator = 0;
+
+            for (int i = 0; i < weights.Length; i++)
+            {
+                numerator += weights[i] * highClimateImpactSectorFactors[i];
+                denominator += weights[i];
+            }
+
+            return numerator / denominator;
+        }
+
+        public static double CalculateGreenRevenuePercentage(double[] weights, double[] cleanTechRevenues)
+        {
+            double numerator = 0;
+            double denominator = 0;
+
+            for (int i = 0; i < weights.Length; i++)
+            {
+                numerator += weights[i] * cleanTechRevenues[i];
+                denominator += weights[i];
+            }
+
+            return numerator / denominator;
+        }
+
+        public static double CalculateGreenBondsPercentage(double[] weights, int[] greenBondFactors)
+        {
+            double numerator = 0;
+            double denominator = 0;
+
+            for (int i = 0; i < weights.Length; i++)
+            {
+                numerator += weights[i] * greenBondFactors[i];
+                denominator += weights[i];
+            }
+
+            return numerator / denominator;
+        }
+
+        public static double CalculateSocialPillarScore(double[] weights, double[] socialPillarWeights, double[] socialPillarScores)
+        {
+            double numerator = 0;
+            double denominator = 0;
+
+            for (int i = 0; i < weights.Length; i++)
+            {
+                numerator += weights[i] * socialPillarWeights[i] * socialPillarScores[i];
+                denominator += weights[i] * socialPillarWeights[i];
+            }
+
+            return numerator / denominator;
+        }
+
+        public static double CalculateSocialPillarScoreDistribution(double[] weights, double[] socialPillarWeights, double[] socialPillarScores, int socialPillarScoreRange)
+        {
+            double numerator = 0;
+            double denominator = 0;
+
+            for (int i = 0; i < weights.Length; i++)
+            {
+                if (socialPillarScores[i] >= socialPillarScoreRange && socialPillarScores[i] < socialPillarScoreRange + 1)
+                {
+                    numerator += weights[i] * socialPillarWeights[i];
+                    denominator += weights[i] * socialPillarWeights[i];
+                }
+            }
+
+            return numerator / denominator;
+        }
+
+        public static double CalculateControversialWeaponsPercentage(double[] weights, int[] controversialWeaponsFactors)
+        {
+            double numerator = 0;
+            double denominator = 0;
+
+            for (int i = 0; i < weights.Length; i++)
+            {
+                numerator += weights[i] * controversialWeaponsFactors[i];
+                denominator += weights[i];
+            }
+
+            return numerator / denominator;
+        }
 
         static Dictionary<string, double> CalculateESGRatingDistribution(List<double> weights, List<string> ESGRatings, List<int> IVA_COMPANY_RATING)
         {
