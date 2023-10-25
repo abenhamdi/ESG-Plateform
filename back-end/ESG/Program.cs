@@ -2,27 +2,79 @@
 using System.Collections.Generic;
 using System.Linq;
 
-class Metrics
+namespace ESGMetricsCalculator
 {
-    static void Main()
+    public class SASBCALCULATOR
     {
-        // Supposons que vous ayez déjà les données nécessaires dans les listes suivantes :
-        List<double> Weight = new List<double>(); // Liste des poids
-        List<string> ESGRating = new List<string>(); // Liste des notations ESG
-        List<int> IVA_COMPANY_RATING = new List<int>(); // Liste des notations ESG attribuées aux entreprises, ajouter les listes des attributs
-
-        // Remplissez ces listes avec les données appropriées
-
-        // Calcul de la distribution de la notation ESG
-        //Dictionary<string, double> ESGRatingDistribution = CalculateESGRatingDistribution(Weight, ESGRating, IVA_COMPANY_RATING);
-
-        // Affichage des résultats
-        /*foreach (var kvp in ESGRatingDistribution)
+        public class ApparelSustainabilityAccountingStandard
         {
-            Console.WriteLine($"ESG Rating {kvp.Key}: {kvp.Value}");
-        }*/
+            public class WastewaterParameter
+            {
+                public string Name { get; set; }
+                public double MaximumConcentration { get; set; }
+            }
+
+            public class SupplierFacilityData
+            {
+                public SupplierFacilityType Type { get; set; }
+                public WastewaterStandard[] Standards { get; set; }
+                public WastewaterParameter[] Parameters { get; set; }
+                public bool InCompliance { get; set; }
+            }
+
+            public enum SupplierFacilityType
+            {
+                Tier1,
+                BeyondTier1,
+            }
+
+            public enum WastewaterStandard
+            {
+                ZDHC,
+                BSR,
+                IPE,
+            }
+
+            public static double CalculatePercentageOfSupplierFacilitiesInComplianceWithWastewaterStandards(IEnumerable<SupplierFacilityData> supplierFacilityData)
+            {
+                // Compte le nombre d'installations de fournisseurs conformes
+                int numberOfInComplianceFacilities = 0;
+                foreach (var supplierFacility in supplierFacilityData)
+                {
+                    if (supplierFacility.InCompliance)
+                    {
+                        numberOfInComplianceFacilities++;
+                    }
+                }
+
+                // Compte le nombre total d'installations de fournisseurs
+                int numberOfFacilities = supplierFacilityData.Count();
+
+                // Calcule le pourcentage
+                return numberOfInComplianceFacilities / (double)numberOfFacilities;
+            }
+
+            public class EnvironmentalImpactsInTheSupplyChain
+            {
+                public static double PercentageOfTier1InCompliance(int numberOfTier1SupplierFacilitiesInCompliance, int totalNumberOfTier1SupplierFacilities)
+                {
+                    return numberOfTier1SupplierFacilitiesInCompliance / (double)totalNumberOfTier1SupplierFacilities;
+                }
+
+                public static double PercentageOfBeyondTier1InCompliance(int numberOfSupplierFacilitiesBeyondTier1InCompliance, int totalNumberOfSupplierFacilitiesBeyondTier1)
+                {
+                    return numberOfSupplierFacilitiesBeyondTier1InCompliance / (double)totalNumberOfSupplierFacilitiesBeyondTier1;
+                }
+
+                public static double CalculatePercentage(int numberOfInComplianceFacilities, int numberOfFacilities)
+                {
+                    return numberOfInComplianceFacilities / (double)numberOfFacilities;
+                }
+            }
+        }
     }
-    public class ESGMetricsCalculator
+
+    public static class ESGMetricsCalculator
     {
         public static double CalculateVerySevereControversiesPercentage(double[] weights, int[] verySevereControversiesFactors)
         {
@@ -51,240 +103,71 @@ class Metrics
 
             return numerator / denominator;
         }
+    }
+    public static double CalculateSocialPillarScoreDistribution(double[] weights, double[] socialPillarWeights, double[] socialPillarScores, int socialPillarScoreRange)
+    {
+        double numerator = 0;
+        double denominator = 0;
 
-        public static double CalculateEnvironmentalPillarScoreDistribution(double[] weights, double[] environmentalPillarWeights, double[] environmentalPillarScores, int environmentalPillarScoreRange)
+        for (int i = 0; i < weights.Length; i++)
         {
-            double numerator = 0;
-            double denominator = 0;
-
-            for (int i = 0; i < weights.Length; i++)
+            if (socialPillarScores[i] >= socialPillarScoreRange && socialPillarScores[i] < socialPillarScoreRange + 1)
             {
-                if (environmentalPillarScores[i] >= environmentalPillarScoreRange && environmentalPillarScores[i] < environmentalPillarScoreRange + 1)
-                {
-                    numerator += weights[i] * environmentalPillarWeights[i];
-                    denominator += weights[i] * environmentalPillarWeights[i];
-                }
-            }
-
-            return numerator / denominator;
-        }
-
-        public static double CalculatePhysicalRiskClimateVaRPercentage(double[] weights, double[] physicalRiskClimateVaRs)
-        {
-            double numerator = 0;
-            double denominator = 0;
-
-            for (int i = 0; i < weights.Length; i++)
-            {
-                numerator += weights[i] * physicalRiskClimateVaRs[i];
-                denominator += weights[i];
-            }
-
-            return numerator / denominator;
-        }
-
-        public static double CalculateBrownSectorExposurePercentage(double[] weights, int[] brownSectorFactors)
-        {
-            double numerator = 0;
-            double denominator = 0;
-
-            for (int i = 0; i < weights.Length; i++)
-            {
-                numerator += weights[i] * brownSectorFactors[i];
-                denominator += weights[i];
-            }
-
-            return numerator / denominator;
-        }
-
-        public static double CalculateCarbonIntensity(double[] weights, double[] carbonEmissionsScope12s, double[] evics)
-        {
-            double numerator = 0;
-            double denominator = 0;
-
-            for (int i = 0; i < weights.Length; i++)
-            {
-                numerator += weights[i] * carbonEmissionsScope12s[i] / evics[i];
-                denominator += weights[i];
-            }
-
-            return numerator / denominator;
-        }
-
-        public static double CalculateReportedEmissionsPercentage(double[] weights, int[] reportedEmissionsFactors)
-        {
-            double numerator = 0;
-            double denominator = 0;
-
-            for (int i = 0; i < weights.Length; i++)
-            {
-                numerator += weights[i] * reportedEmissionsFactors[i];
-                denominator += weights[i];
-            }
-
-            return numerator / denominator;
-        }
-        public static double CalculateEstimatedEmissionsPercentage(double[] weights, int[] estimatedEmissionsFactors)
-        {
-            double numerator = 0;
-            double denominator = 0;
-
-            for (int i = 0; i < weights.Length; i++)
-            {
-                numerator += weights[i] * estimatedEmissionsFactors[i];
-                denominator += weights[i];
-            }
-
-            return numerator / denominator;
-        }
-
-        public static double CalculateWeightedAverageCarbonIntensity(double[] weights, double[] carbonEmissionsScope12s, double[] sales)
-        {
-            double numerator = 0;
-            double denominator = 0;
-
-            for (int i = 0; i < weights.Length; i++)
-            {
-                numerator += weights[i] * carbonEmissionsScope12s[i] / sales[i];
-                denominator += weights[i];
-            }
-
-            return numerator / denominator;
-        }
-
-        public static double CalculateFossilFuelReservesPercentage(double[] weights, int[] fossilFuelReservesFactors)
-        {
-            double numerator = 0;
-            double denominator = 0;
-
-            for (int i = 0; i < weights.Length; i++)
-            {
-                numerator += weights[i] * fossilFuelReservesFactors[i];
-                denominator += weights[i];
-            }
-
-            return numerator / denominator;
-        }
-
-        public static double CalculateHighClimateImpactSectorPercentage(double[] weights, int[] highClimateImpactSectorFactors)
-        {
-            double numerator = 0;
-            double denominator = 0;
-
-            for (int i = 0; i < weights.Length; i++)
-            {
-                numerator += weights[i] * highClimateImpactSectorFactors[i];
-                denominator += weights[i];
-            }
-
-            return numerator / denominator;
-        }
-
-        public static double CalculateGreenRevenuePercentage(double[] weights, double[] cleanTechRevenues)
-        {
-            double numerator = 0;
-            double denominator = 0;
-
-            for (int i = 0; i < weights.Length; i++)
-            {
-                numerator += weights[i] * cleanTechRevenues[i];
-                denominator += weights[i];
-            }
-
-            return numerator / denominator;
-        }
-
-        public static double CalculateGreenBondsPercentage(double[] weights, int[] greenBondFactors)
-        {
-            double numerator = 0;
-            double denominator = 0;
-
-            for (int i = 0; i < weights.Length; i++)
-            {
-                numerator += weights[i] * greenBondFactors[i];
-                denominator += weights[i];
-            }
-
-            return numerator / denominator;
-        }
-
-        public static double CalculateSocialPillarScore(double[] weights, double[] socialPillarWeights, double[] socialPillarScores)
-        {
-            double numerator = 0;
-            double denominator = 0;
-
-            for (int i = 0; i < weights.Length; i++)
-            {
-                numerator += weights[i] * socialPillarWeights[i] * socialPillarScores[i];
+                numerator += weights[i] * socialPillarWeights[i];
                 denominator += weights[i] * socialPillarWeights[i];
             }
-
-            return numerator / denominator;
         }
 
-        public static double CalculateSocialPillarScoreDistribution(double[] weights, double[] socialPillarWeights, double[] socialPillarScores, int socialPillarScoreRange)
-        {
-            double numerator = 0;
-            double denominator = 0;
-
-            for (int i = 0; i < weights.Length; i++)
-            {
-                if (socialPillarScores[i] >= socialPillarScoreRange && socialPillarScores[i] < socialPillarScoreRange + 1)
-                {
-                    numerator += weights[i] * socialPillarWeights[i];
-                    denominator += weights[i] * socialPillarWeights[i];
-                }
-            }
-
-            return numerator / denominator;
-        }
-
-        public static double CalculateControversialWeaponsPercentage(double[] weights, int[] controversialWeaponsFactors)
-        {
-            double numerator = 0;
-            double denominator = 0;
-
-            for (int i = 0; i < weights.Length; i++)
-            {
-                numerator += weights[i] * controversialWeaponsFactors[i];
-                denominator += weights[i];
-            }
-
-            return numerator / denominator;
-        }
-
-        static Dictionary<string, double> CalculateESGRatingDistribution(List<double> weights, List<string> ESGRatings, List<int> IVA_COMPANY_RATING)
-        {
-            // Créer un dictionnaire pour stocker la distribution
-            Dictionary<string, double> distribution = new Dictionary<string, double>();
-
-            // Récupérer la liste distincte des notations ESG
-            var distinctESGRatings = ESGRatings.Distinct().ToList();
-
-            // Calculer le dénominateur (Σ(Weighti))
-            double denominator = weights.Sum();
-
-            // Parcourir les notations ESG distinctes
-          /*  foreach (var ESGRating in distinctESGRatings)
-            {
-                // Calculer le numérateur (Σ(Weighti * ESG Rating Factori,k))
-                double numerator = 0.0;
-                for (int i = 0; i < weights.Count; i++)
-                {
-                    if (IVA_COMPANY_RATING[i] == ESGRating)
-                    {
-                        numerator += weights[i];
-                    }
-                }
-
-                // Calculer la distribution pour cette notation ESG
-                double ESGRatingDistribution = numerator / denominator;
-
-                // Ajouter la distribution au dictionnaire
-                distribution[ESGRating] = ESGRatingDistribution;
-            }*/
-
-            return distribution;
-        }
+        return numerator / denominator;
     }
+
+    public static double CalculateControversialWeaponsPercentage(double[] weights, int[] controversialWeaponsFactors)
+    {
+        double numerator = 0;
+        double denominator = 0;
+
+        for (int i = 0; i < weights.Length; i++)
+        {
+            numerator += weights[i] * controversialWeaponsFactors[i];
+            denominator += weights[i];
+        }
+
+        return numerator / denominator;
+    }
+
+    static Dictionary<string, double> CalculateESGRatingDistribution(List<double> weights, List<string> ESGRatings, List<int> IVA_COMPANY_RATING)
+    {
+        // Créer un dictionnaire pour stocker la distribution
+        Dictionary<string, double> distribution = new Dictionary<string, double>();
+
+        // Récupérer la liste distincte des notations ESG
+        var distinctESGRatings = ESGRatings.Distinct().ToList();
+
+        // Calculer le dénominateur (Σ(Weighti))
+        double denominator = weights.Sum();
+
+        // Parcourir les notations ESG distinctes
+        /*  foreach (var ESGRating in distinctESGRatings)
+          {
+              // Calculer le numérateur (Σ(Weighti * ESG Rating Factori,k))
+              double numerator = 0.0;
+              for (int i = 0; i < weights.Count; i++)
+              {
+                  if (IVA_COMPANY_RATING[i] == ESGRating)
+                  {
+                      numerator += weights[i];
+                  }
+              }
+
+              // Calculer la distribution pour cette notation ESG
+              double ESGRatingDistribution = numerator / denominator;
+
+              // Ajouter la distribution au dictionnaire
+              distribution[ESGRating] = ESGRatingDistribution;
+          }*/
+
+        return distribution;
+    }
+}
+
 }
