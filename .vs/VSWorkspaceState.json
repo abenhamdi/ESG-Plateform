@@ -2,8 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\back-end",
-    "\\back-end\\ESG"
+    "\\back-end\\Consumers Goods",
+    "\\back-end\\Consumers Goods\\Apparel",
+    "\\back-end\\Consumers Goods\\Apparel\\Controllers",
+    "\\ESG-Plateform",
+    "\\ESG-Plateform\\back-end",
+    "\\ESG-Plateform\\back-end\\Consumers Goods",
+    "\\ESG-Plateform\\back-end\\Consumers Goods\\Apparel",
+    "\\ESG-Plateform\\back-end\\Consumers Goods\\Apparel\\Controllers"
   ],
-  "SelectedNode": "\\back-end\\ESG\\Program.cs",
+  "SelectedNode": "\\ESG-Plateform\\back-end\\Consumers Goods\\Apparel\\Controllers\\WeatherForecastController.cs",
   "PreviewInSolutionExplorer": false
 }
