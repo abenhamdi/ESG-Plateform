@@ -30,3 +30,14 @@ C:\Users\ouali\Documents\GitHub\ESG-Plateform\back-end\Consumers Goods\Apparel\o
 C:\Users\ouali\Documents\GitHub\ESG-Plateform\back-end\Consumers Goods\Apparel\obj\Debug\net6.0\Apparel.pdb
 C:\Users\ouali\Documents\GitHub\ESG-Plateform\back-end\Consumers Goods\Apparel\obj\Debug\net6.0\Apparel.genruntimeconfig.cache
 C:\Users\ouali\Documents\GitHub\ESG-Plateform\back-end\Consumers Goods\Apparel\obj\Debug\net6.0\ref\Apparel.dll
+C:\Users\Utilisateur\Documents\GitHub\ESG-Plateform1\ESG-Plateform\back-end\Consumers Goods\Apparel\obj\Debug\net6.0\Apparel.csproj.AssemblyReference.cache
+C:\Users\Utilisateur\Documents\GitHub\ESG-Plateform1\ESG-Plateform\back-end\Consumers Goods\Apparel\obj\Debug\net6.0\Apparel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Utilisateur\Documents\GitHub\ESG-Plateform1\ESG-Plateform\back-end\Consumers Goods\Apparel\obj\Debug\net6.0\Apparel.AssemblyInfoInputs.cache
+C:\Users\Utilisateur\Documents\GitHub\ESG-Plateform1\ESG-Plateform\back-end\Consumers Goods\Apparel\obj\Debug\net6.0\Apparel.AssemblyInfo.cs
+C:\Users\Utilisateur\Documents\GitHub\ESG-Plateform1\ESG-Plateform\back-end\Consumers Goods\Apparel\obj\Debug\net6.0\Apparel.csproj.CoreCompileInputs.cache
+C:\Users\Utilisateur\Documents\GitHub\ESG-Plateform1\ESG-Plateform\back-end\Consumers Goods\Apparel\obj\Debug\net6.0\Apparel.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Utilisateur\Documents\GitHub\ESG-Plateform1\ESG-Plateform\back-end\Consumers Goods\Apparel\obj\Debug\net6.0\Apparel.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Utilisateur\Documents\GitHub\ESG-Plateform1\ESG-Plateform\back-end\Consumers Goods\Apparel\obj\Debug\net6.0\Apparel.sourcelink.json
+C:\Users\Utilisateur\Documents\GitHub\ESG-Plateform1\ESG-Plateform\back-end\Consumers Goods\Apparel\obj\Debug\net6.0\Apparel.dll
+C:\Users\Utilisateur\Documents\GitHub\ESG-Plateform1\ESG-Plateform\back-end\Consumers Goods\Apparel\obj\Debug\net6.0\refint\Apparel.dll
+C:\Users\Utilisateur\Documents\GitHub\ESG-Plateform1\ESG-Plateform\back-end\Consumers Goods\Apparel\obj\Debug\net6.0\Apparel.pdb
