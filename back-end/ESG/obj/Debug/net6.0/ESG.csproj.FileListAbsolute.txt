@@ -23,3 +23,11 @@ C:\Users\Utilisateur\source\repos\ESG\obj\Debug\net6.0\refint\ESG.dll
 C:\Users\Utilisateur\source\repos\ESG\obj\Debug\net6.0\ESG.pdb
 C:\Users\Utilisateur\source\repos\ESG\obj\Debug\net6.0\ESG.genruntimeconfig.cache
 C:\Users\Utilisateur\source\repos\ESG\obj\Debug\net6.0\ref\ESG.dll
+C:\Users\ouali\Documents\GitHub\ESG-Plateform\back-end\ESG\obj\Debug\net6.0\ESG.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ouali\Documents\GitHub\ESG-Plateform\back-end\ESG\obj\Debug\net6.0\ESG.AssemblyInfoInputs.cache
+C:\Users\ouali\Documents\GitHub\ESG-Plateform\back-end\ESG\obj\Debug\net6.0\ESG.AssemblyInfo.cs
+C:\Users\ouali\Documents\GitHub\ESG-Plateform\back-end\ESG\obj\Debug\net6.0\ESG.csproj.CoreCompileInputs.cache
+C:\Users\ouali\Documents\GitHub\ESG-Plateform\back-end\ESG\obj\Debug\net6.0\ESG.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\ouali\Documents\GitHub\ESG-Plateform\back-end\ESG\obj\Debug\net6.0\ESG.dll
+C:\Users\ouali\Documents\GitHub\ESG-Plateform\back-end\ESG\obj\Debug\net6.0\refint\ESG.dll
+C:\Users\ouali\Documents\GitHub\ESG-Plateform\back-end\ESG\obj\Debug\net6.0\ESG.pdb
