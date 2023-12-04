@@ -8,279 +8,99 @@ namespace Apparel_Accessories_Footwear
         string MetricDescription { get; set; }
         ESGCategory Category { get; set; }
         string UnitOfMeasure { get; set; }
-        string Measure { get; set; }
+        float Measure { get; set; }
         string Code { get; set; }
 
         bool ValidateMetric();
     }
 
-    public class ESGMetricApparelAccessoriesAndFootwear : IESGMetric
+    public abstract class BaseESGMetric : IESGMetric
     {
         public string Topic { get; private set; }
         public string MetricDescription { get; set; }
-        public ESGCategory Category { get; set; }
+        public ESGCategory Category { bool DiscussionAndAnalysis; bool ; }
         public string UnitOfMeasure { get; set; }
-        public float? Measure { get; set; }
+        public float Measure { get; set; }
         public string Code { get; set; }
 
         public bool ValidateMetric()
         {
-            if (string.IsNullOrEmpty(Code) || Category == null || string.IsNullOrEmpty(UnitOfMeasure))
+            if (string.IsNullOrEmpty(Topic) || string.IsNullOrEmpty(Code))
             {
+                LogError("Error: Topic or code not found.");
                 return false;
             }
 
-            if (Category.Type == CategoryType.DiscussionAndAnalysis)
-            {
-                Measure = null;
-            }
+            return ValidateESGMetric();
+        }
 
-            return true;
+        protected abstract bool ValidateESGMetric();
+
+        protected void LogError(string message)
+        {
+            Console.WriteLine(message);
         }
     }
 
-
-    public class ESGMetricApparelAccessoriesAndFootwear : IESGMetric
+    public class ESGMetricApparelAccessoriesAndFootwear : BaseESGMetric
     {
-        public string Topic { get; private set; }
-        public string MetricDescription { get; set; }
-        public ESGCategory Category { get; set; }
-        public string UnitOfMeasure { get; set; }
-        public float? Measure { get; set; }
-        public string Code { get; set; }
-
-        public bool ValidateMetric()
+        public ESGMetricApparelAccessoriesAndFootwear()
         {
-            if (string.IsNullOrEmpty(Code) || Category == null || string.IsNullOrEmpty(UnitOfMeasure))
-            {
-                return false;
-            }
-
-            if (Category.Type == CategoryType.DiscussionAndAnalysis)
-            {
-                Measure = null;
-            }
-
-            return true;
+            Topic = "Apparel Accessories and Footwear";
         }
-    }
-    public class ESGMetricApparelAccessoriesAndFootwear : IESGMetric
-    {
-        public string Topic { get; }
-        public string MetricDescription { get; set; }
-        public string CategorySet { DiscussAndAnalysis; Quantitative; }
-        public string UnitOfMeasure { get; set; }
-        public long float Measure { get; set; }
-        public string Code { get; set; }
 
-        public bool MetricValidation()
+        protected override bool ValidateESGMetric()
         {
-            if (Code == null | CategorySet == null || UnitOfMeasure == null)
-            {
-                return false;
+            return ValidateChemicalsInProducts()
+                && ValidateEnvironmentalImpactsInSupplyChain()
+                && ValidateLabourConditionsInSupplyChain()
+                && ValidateRawMaterialsSourcing();
+        }
 
-            } // Validation logic specific to this category
+        private bool ValidateChemicalsInProducts()
+        {
+            return !string.IsNullOrEmpty(this.MetricDescription);
+        }
 
-            return true; // or false based on validation criteria
+        private bool ValidateEnvironmentalImpactsInSupplyChain()
+        {
+            return this.Measure.HasValue;
+        }
 
-            if (SetCategory == DiscussAndAnalysis)
-            {
-                Measure = null;
-            }
+        private bool ValidateLabourConditionsInSupplyChain()
+        {
+            return !string.IsNullOrEmpty(this.MetricDescription);
+        }
+
+        private bool ValidateRawMaterialsSourcing()
+        {
+            return !string.IsNullOrEmpty(this.MetricDescription);
         }
     }
 
-    public class ESGMetricApplianceManufacturing : IESGMetric
+    // Les autres classes de m�triques suivent le m�me mod�le...
+
+    public class ESGMetricEcommerce : BaseESGMetric
     {
-        public string Topic { get; }
-        public string MetricDescription { get; set; }
-        public string CategorySet { DiscussAndAnalysis; Quantitative; }
-        public string UnitOfMeasure { get; set; }
-        public long float Measure { get; set; }
-        public string Code { get; set; }
-
-        public bool MetricValidation()
+        public ESGMetricEcommerce()
         {
-            if (Code == null | CategorySet == null || UnitOfMeasure == null)
-            {
-                return false;
-
-            } // Validation logic specific to this category
-
-            return true; // or false based on validation criteria
-
-            if (SetCategory == DiscussAndAnalysis)
-            {
-                Measure = null;
-            }
+            Topic = "Ecommerce";
         }
 
-        public class ESGMetricBuildingProductsAndFurnishings : IESGMetric
+        protected override bool ValidateESGMetric()
         {
-            public string Topic { get; }
-            public string MetricDescription { get; set; }
-            public string CategorySet { DiscussAndAnalysis; Quantitative; }
-            public string UnitOfMeasure { get; set; }
-            public long float Measure { get; set; }
-            public string Code { get; set; }
-
-            public bool MetricValidation()
-            {
-                if (Code == null | CategorySet == null || UnitOfMeasure == null)
-                {
-                    return false;
-
-                } // Validation logic specific to this category
-
-                return true; // or false based on validation criteria
-
-                if (SetCategory == DiscussAndAnalysis)
-                {
-                    Measure = null;
-                }
-            }
-
+            // Logique de validation spécifique pour Ecommerce
+            return true; // Placeholder pour la logique r�elle
         }
-        public class ESGMetricEcommerce : IESGMetric
-        {
-            public string Topic { get; }
-            public string MetricDescription { get; set; }
-            public string CategorySet { DiscussAndAnalysis; Quantitative; }
-            public string UnitOfMeasure { get; set; }
-            public long float Measure { get; set; }
-            public string Code { get; set; }
+    }
 
-            public bool MetricValidation()
-            {
-                if (Code == null | CategorySet == null || UnitOfMeasure == null)
-                {
-                    return false;
+    // ... Autres classes ici ...
 
-                } // Validation logic specific to this category
-
-                return true; // or false based on validation criteria
-
-                if (SetCategory == DiscussAndAnalysis)
-                {
-                    Measure = null;
-                }
-            }
-
-        }
-        public class ESGMetricHouseholdAndPersonalProducts : IESGMetric
-        {
-            public string Topic { get; }
-            public string MetricDescription { get; set; }
-            public string CategorySet { DiscussAndAnalysis; Quantitative; }
-            public string UnitOfMeasure { get; set; }
-            public long float Measure { get; set; }
-            public string Code { get; set; }
-
-            public bool MetricValidation()
-            {
-                if (Code == null | CategorySet == null || UnitOfMeasure == null)
-                {
-                    return false;
-
-                } // Validation logic specific to this category
-
-                return true; // or false based on validation criteria
-
-                if (SetCategory == DiscussAndAnalysis)
-                {
-                    Measure = null;
-                }
-            }
-
-        }
-        public class ESGMetricMultilineAndSpecialtyRetailersAndDistributors : IESGMetric
-        {
-            public string Topic { get; }
-            public string MetricDescription { get; set; }
-            public string CategorySet { DiscussAndAnalysis; Quantitative; }
-            public string UnitOfMeasure { get; set; }
-            public long float Measure { get; set; }
-            public string Code { get; set; }
-
-            public bool MetricValidation()
-            {
-                if (Code == null | CategorySet == null || UnitOfMeasure == null)
-                {
-                    return false;
-
-                } // Validation logic specific to this category
-
-                return true; // or false based on validation criteria
-
-                if (SetCategory == DiscussAndAnalysis)
-                {
-                    Measure = null;
-                }
-            }
-
-        }
-
-        public class ESGMetrictoysAndSportingGoods : IESGMetric
-        {
-            public string Topic { get; }
-            public string MetricDescription { get; set; }
-            public string CategorySet { DiscussAndAnalysis; Quantitative; }
-            public string UnitOfMeasure { get; set; }
-            public long float Measure { get; set; }
-            public string Code { get; set; }
-
-            public bool MetricValidation()
-            {
-                if (Code == null | CategorySet == null || UnitOfMeasure == null)
-                {
-                    return false;
-
-                } // Validation logic specific to this category
-
-                return true; // or false based on validation criteria
-
-                if (SetCategory == DiscussAndAnalysis)
-                {
-                    Measure = null;
-                }
-            }
-
-        }
-
-        // Similar implementations for other metric classes...
-
-        public class ESGMetricsSet
+    public class ESGMetricsSet
     {
         public bool ValidateMetrics(IESGMetric metric)
         {
-            if (metric == null)
-            {
-                throw new ArgumentNullException(nameof(metric), "Metric cannot be null.");
-            }
-
-            if (string.IsNullOrEmpty(metric.Code) || !IsValidCode(metric.Code))
-            {
-                throw new ArgumentException("Metric code is invalid.", nameof(metric));
-            }
-
-            if (string.IsNullOrEmpty(metric.MetricDescription))
-            {
-                throw new ArgumentException("Metric description cannot be empty.", nameof(metric));
-            }
-
             return metric.ValidateMetric();
-        }
-
-        private bool IsValidCode(string code)
-        {
-            // Implement code validation logic
-            return !string.IsNullOrEmpty(code);
-        }
-
-        private void LogError(Exception ex)
-        {
-            // Implement error logging logic
-            Console.WriteLine($"Error: {ex.Message}");
         }
     }
 
@@ -293,6 +113,5 @@ namespace Apparel_Accessories_Footwear
     public class ESGCategory
     {
         public CategoryType Type { get; set; }
-        // Other category-related properties
     }
 }
