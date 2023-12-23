@@ -1,80 +1,80 @@
 [
   {
-    "name":["Marketplace",false],
+    "name":["Financial section Scope 1",false],
     "quantity": 2458, 
     "date": "12.Jan.2021",
-    "progress": 75.5  
+    "progress": 75.5
   },
   {
-    "name":["Venus DB PRO",true],
+    "name":["Supply Chain Report",true],
     "quantity": 1485, 
     "date": "21.Feb.2021",
-    "progress": 35.4  
+    "progress": 35.4
   },
   {
-    "name":["Venus DS",true],
+    "name":["Sales",true],
     "quantity": 1024, 
     "date": "13.Mar.2021",
-    "progress": 25  
+    "progress": 25
   },
   {
-    "name":["Venus 3D Asset",true],
+    "name":["Marketing",true],
     "quantity": 858, 
     "date": "24.Jan.2021",
-    "progress": 100  
+    "progress": 100
   },
   {
-    "name":["Marketplace",false],
+    "name":["Financial section Scope 3",false],
     "quantity": 258, 
     "date": "Oct 24, 2022",
-    "progress": 75.5  
+    "progress": 75.5
   },
   {
-    "name":["Marketplace",false],
+    "name":["Financial section Scope 2",false],
     "quantity": 258, 
     "date": "Oct 24, 2022",
-    "progress": 75.5  
+    "progress": 75.5
   },
   {
-    "name":["Marketplace",false],
+    "name":["Financial section Scope 1",false],
     "quantity": 258, 
     "date": "12.Jan.2021",
-    "progress": 75.5  
+    "progress": 75.5
   },
   {
-    "name":["Venus DB PRO",false],
+    "name":["Marketing",false],
     "quantity": 858, 
     "date": "21.Feb.2021",
-    "progress": 35.4  
+    "progress": 35.4
   },
   {
-    "name":["Venus DS",false],
+    "name":["Supply Chain Report",false],
     "quantity": 1024, 
     "date": "13.Mar.2021",
-    "progress": 25  
+    "progress": 25
   },
   {
-    "name":["Venus 3D Asset",false],
+    "name":["Financial section Scope 2",false],
     "quantity": 258, 
     "date": "24.Jan.2021",
-    "progress": 100  
+    "progress": 100
   },
   {
-    "name":["Marketplace",false],
+    "name":["Marketing",false],
     "quantity": 1024, 
     "date": "Oct 24, 2022",
-    "progress": 75.5  
+    "progress": 75.5
   },
   {
-    "name":["Marketplace",false],
+    "name":["Supply Chain Report",false],
     "quantity": 258, 
     "date": "Oct 24, 2022",
-    "progress": 75.5  
+    "progress": 75.5
   },
   {
-    "name":["Marketplace",false],
+    "name":["Sales",false],
     "quantity": 258, 
     "date": "Oct 24, 2022",
-    "progress": 75.5  
+    "progress": 75.5
   }
 ]

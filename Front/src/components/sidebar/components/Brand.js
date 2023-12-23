@@ -1,11 +1,12 @@
 import React from "react";
 
 // Chakra imports
-import { Flex, useColorModeValue } from "@chakra-ui/react";
+import { Flex, useColorModeValue, Image } from "@chakra-ui/react";
 
 // Custom components
 import { HSeparator } from "components/separator/Separator";
-import { MifrilLogo } from "components/icons/Icons";
+import mifrilLogo from "components/icons/mifril.png";
+
 
 export function SidebarBrand() {
   //   Chakra color mode
@@ -13,7 +14,8 @@ export function SidebarBrand() {
 
   return (
     <Flex align='center' direction='column'>
-      <MifrilLogo h='26px' w='175px' my='32px' color={logoColor} />
+      <Image h='75%' w='75%'  src={mifrilLogo} />
+
       <HSeparator mb='20px' />
     </Flex>
   );

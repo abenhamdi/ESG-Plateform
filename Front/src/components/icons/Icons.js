@@ -462,8 +462,7 @@ export const MifrilLogo = createIcon({
   displayName: "mifrilLogo",
   viewBox: "0 0 200 200",
   path:(
-  <g transform="translate(0.000000,503.000000) scale(0.100000,-0.100000)"
-  width='179' height='20' fill='none' xmlns='http://www.w3.org/2000/svg'>
+  <g  width='179' height='20' fill='none' xmlns='http://www.w3.org/2000/svg'>
   <path d="M1580 2579 l0 -52 30 32 c17 17 35 31 40 31 6 0 5 8 -2 20 -8 12 -24
   20 -40 20 -27 0 -28 -2 -28 -51z"
   fill='currentColor'/>
