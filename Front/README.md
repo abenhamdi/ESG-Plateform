@@ -96,6 +96,4 @@ new people that already use Horizon UI!
 
 ### Copyright and license
 
-⭐️ [Copyright 2023 Simmmple ](https://www.simmmple.com/?ref=readme-horizon)
 
-📄 [Horizon UI License](https://www.simmmple.com/licenses?ref=readme-horizon)
