@@ -1,8 +1,15 @@
 // Chakra imports
-import { Box, Text, useColorModeValue } from "@chakra-ui/react";
+import { Box, Text, useColorModeValue, Icon } from "@chakra-ui/react";
 // Custom components
 import Card from "components/card/Card.js";
 import React from "react";
+import IconBox from "components/icons/IconBox";
+import {
+  MdAddTask,
+  MdCloud,
+  MdBarChart,
+  MdFileCopy,
+} from "react-icons/md";
 
 export default function Information(props) {
   const { title, value, ...rest } = props;
@@ -19,6 +26,12 @@ export default function Information(props) {
         <Text color={textColorPrimary} fontWeight='500' fontSize='md'>
           {value}
         </Text>
+        <IconBox
+              w='28px'
+              h='28px'
+              bg='linear-gradient(90deg, #4481EB 0%, #04BEFE 100%)'
+              icon={<Icon w='14px' h='14px' as={MdAddTask} color='white' />}
+            />
       </Box>
     </Card>
   );

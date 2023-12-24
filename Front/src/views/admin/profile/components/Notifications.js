@@ -28,7 +28,7 @@ export default function Notifications(props) {
         fontSize="sm"
         mb="20px"
         id="1"
-        label="Item update notifications"
+        label="Topic update notifications"
       />
       <SwitchField
         reversed={true}
@@ -43,7 +43,7 @@ export default function Notifications(props) {
         fontSize="sm"
         mb="20px"
         id="3"
-        label="Buyer review notifications"
+        label="Review notifications"
       />
       <SwitchField
         isChecked={true}
@@ -65,7 +65,7 @@ export default function Notifications(props) {
         fontSize="sm"
         mb="20px"
         id="6"
-        label="Company news notifications"
+        label="Company news advancement"
       />
       <SwitchField
         isChecked={true}
@@ -80,7 +80,7 @@ export default function Notifications(props) {
         fontSize="sm"
         mb="20px"
         id="8"
-        label="Monthly product changes"
+        label="Monthly progress"
       />
       <SwitchField
         isChecked={true}
@@ -94,7 +94,7 @@ export default function Notifications(props) {
         reversed={true}
         fontSize="sm"
         id="10"
-        label="Email me when someone follows me"
+        label="Email me when a KPI get an error"
       />
     </Card>
   );

@@ -37,7 +37,7 @@ export default function Upload(props) {
                 </Text>
               </Flex>
               <Text fontSize='sm' fontWeight='500' color='secondaryGray.500'>
-                PNG, JPG and GIF files are allowed
+                EXCEL, JSon, Csv files are allowed
               </Text>
             </Box>
           }
