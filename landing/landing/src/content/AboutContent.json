@@ -1,0 +1,16 @@
+{
+  "title": "Get actionable insights from Big Data in 2 steps",
+  "text": "With the help of powerful algorithms, quality rules & techniques, obtain simplified & enriched data.",
+  "section": [
+    {
+      "title": "Valuable buisness insights  ",
+      "content": "Collect processed & cleansed data that is ready to be analyzed to gather valuable business insights.",
+      "icon": "notes.svg"
+    },
+    {
+      "title": "Data in real-time",
+      "content": "Collect data in real-time from multiple channels and move it into a data lake, in its original format.",
+      "icon": "notes.svg"
+    }
+  ]
+}
