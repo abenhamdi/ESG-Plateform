@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const FooterSection = styled("footer")`
-  background: rgb(241, 242, 243);
+  background: #84A9AC;
   padding: 2.5rem 0;
 `;
 
@@ -30,8 +30,8 @@ export const NavLink = styled(Link)`
 `;
 
 export const Extra = styled("section")`
-  background: rgb(241, 242, 243);
-  position: relative;
+background: #84A9AC;
+position: relative;
   width: 100%;
   margin-right: auto;
   margin-left: auto;
@@ -62,9 +62,9 @@ export const Large = styled(Link)<any>`
   max-width: max-content;
 
   &:hover {
-    color: rgb(255, 130, 92);
+    color: #FDC2BE;
     text-underline-position: under;
-    text-decoration: rgb(255, 130, 92) wavy underline;
+    text-decoration: #FDC2BE wavy underline;
   }
 `;
 
@@ -77,8 +77,8 @@ export const Chat = styled("p")`
   transition: all 0.3s ease-in-out;
 
   &:hover {
-    border-bottom: 1px solid rgb(255, 130, 92);
-    color: rgb(255, 130, 92);
+    border-bottom: 1px solid #FDC2BE;
+    color: #FDC2BE;
   }
 `;
 
@@ -95,6 +95,7 @@ export const FooterContainer = styled("div")`
   text-align: center;
   align-items: center;
   transition: all 0.1s ease-in-out;
+  background: #84A9AC;
 
   a {
     &:hover,
@@ -121,7 +122,7 @@ export const FooterContainer = styled("div")`
     height: 25px;
 
     &:hover {
-      fill: rgb(255, 130, 92);
+      fill: #FDC2BE;
     }
   }
 `;

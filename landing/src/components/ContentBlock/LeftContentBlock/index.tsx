@@ -24,10 +24,10 @@ const LeftContentBlock = ({
     <LeftContentSection>
       <Fade direction="left">
         <Row justify="space-between" align="middle" id={id}>
-          <Col lg={11} md={11} sm={12} xs={24}>
-            <SvgIcon src={icon} width="100%" height="100%" />
-          </Col>
           <Col lg={11} md={11} sm={11} xs={24}>
+            <SvgIcon src={icon} width="180%" height="180%" />
+          </Col>
+          <Col lg={15} md={11} sm={11} xs={24}>
             <ContentWrapper>
               <h6>{t(title)}</h6>
               <Content>{t(content)}</Content>

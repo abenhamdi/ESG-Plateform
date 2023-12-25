@@ -104,6 +104,7 @@ export const Styles = createGlobalStyle`
         flex-direction: column;
         text-align: left;
         padding-top: 1.5rem;
+        background: #111c44;
     }
 
     .ant-drawer-content-wrapper {
