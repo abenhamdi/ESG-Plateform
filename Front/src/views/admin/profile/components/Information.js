@@ -23,14 +23,15 @@ export default function Information(props) {
         <Text fontWeight='500' color={textColorSecondary} fontSize='sm'>
           {title}
         </Text>
-        <Text color={textColorPrimary} fontWeight='500' fontSize='md'>
+        <Text color={textColorPrimary} fontWeight='500' fontSize='md'pr="40px" >
           {value}
         </Text>
         <IconBox
-              w='28px'
-              h='28px'
+              pos='right'
+              w='50px'
+              h='50px'
               bg='linear-gradient(90deg, #4481EB 0%, #04BEFE 100%)'
-              icon={<Icon w='14px' h='14px' as={MdAddTask} color='white' />}
+              icon={<Icon w='25px' h='25px' as={MdAddTask} color='white' />}
             />
       </Box>
     </Card>

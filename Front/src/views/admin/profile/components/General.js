@@ -58,12 +58,6 @@ export default function GeneralInformation(props) {
           title='Management of Chemicals in Products'
           value='CG-AA-250a.1'
         />
-        <IconBox
-              w='56px'
-              h='56px'
-              bg='linear-gradient(90deg, #4481EB 0%, #04BEFE 100%)'
-              icon={<Icon w='28px' h='28px' as={MdAddTask} color='white' />}
-            />
         <Information
           boxShadow={cardShadow}
           title='Environmental impacts in the Supply Chain'
