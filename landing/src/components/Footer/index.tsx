@@ -35,16 +35,6 @@ const Footer = ({ t }: any) => {
         <Container>
           <Row justify="space-between">
             <Col lg={6} md={6} sm={12} xs={12}>
-              <Language>{t("Contact")}</Language>
-              <Large to="/">{t("Tell us everything")}</Large>
-              <Para>
-                {t(`Do you have any question? Feel free to reach out.`)}
-              </Para>
-              <a href="mailto:@gmail.com">
-                <Chat>{t(`Let's Chat`)}</Chat>
-              </a>
-            </Col>
-            <Col lg={6} md={6} sm={12} xs={12}>
               <Title>{t("Company")}</Title>
               <Large left="true" to="/">
                 {t("About")}
@@ -59,6 +49,16 @@ const Footer = ({ t }: any) => {
             <Col lg={6} md={6} sm={12} xs={12}>
               <Title>{t("Address")}</Title>
               <Para>Paris, France</Para>
+            </Col>
+            <Col lg={6} md={6} sm={12} xs={12}>
+              <Language>{t("Contact")}</Language>
+              <Large to="/">{t("Tell us everything")}</Large>
+              <Para>
+                {t(`Do you have any question? Feel free to reach out.`)}
+              </Para>
+              <a href="mailto:@gmail.com">
+                <Chat>{t(`Let's Chat`)}</Chat>
+              </a>
             </Col>
             <Col lg={6} md={6} sm={12} xs={12}>
               <Label htmlFor="select-lang">{t("Language")}</Label>
