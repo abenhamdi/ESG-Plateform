@@ -45,10 +45,10 @@ const Home = () => {
         id="mission"
       />
       <ContentBlock
-        type="left"
+        type="right"
         title={ProductContent.title}
         content={ProductContent.text}
-        icon="waving.svg"
+        icon="giphy.gif"
         id="product"
       />
       <Contact
