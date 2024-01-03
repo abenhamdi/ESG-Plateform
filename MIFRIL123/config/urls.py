@@ -18,13 +18,14 @@ from django.urls import include, path
 from rest_framework import routers 
 from config import views
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
-
+from manage import render_data
 
 router = routers.DefaultRouter()
 router.register(r"users", views.UserViewSet)
 router.register(r"groups", views.GroupViewSet)
 
 urlpatterns = [
+    path('render_data/', render_data, name='render_data'),
     path("" , include(router.urls)),
     path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
     # OpenAPI 3 documentation with Swagger UI

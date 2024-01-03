@@ -1,10 +1,10 @@
 // Chakra imports
 import { Text, useColorModeValue } from "@chakra-ui/react";
 // Assets
-import Project1 from "assets/img/profile/Project1.png";
-import Project2 from "assets/img/profile/Project2.png";
-import Project3 from "assets/img/profile/Project3.png";
-import Project4 from "assets/img/profile/Project4.png";
+import Project1 from "assets/img/profile/Project1.jpg";
+import Project2 from "assets/img/profile/Project2.jpg";
+import Project3 from "assets/img/profile/Project3.jpg";
+import Project4 from "assets/img/profile/Project4.jpg";
 // Custom components
 import Card from "components/card/Card.js";
 import React from "react";
