@@ -9,6 +9,7 @@ djangorestframework = "*"
 drf-spectacular = "*"
 django-cors-headers = "*"
 reportlab = {extras = ["pycairo"], version = "*"}
+python-docx = "*"
 
 [dev-packages]
 
