@@ -68,16 +68,16 @@ const Footer = ({ t }: any) => {
                   <SvgIcon
                     src="flagluklogo.png"
                     aria-label="homepage"
-                    width="30px"
-                    height="30px"
+                    width="25px"
+                    height="25px"
                   />
                 </LanguageSwitch>
                 <LanguageSwitch onClick={() => handleChange("es")}>
                   <SvgIcon
                     src="spain.svg"
                     aria-label="homepage"
-                    width="30px"
-                    height="30px"
+                    width="25px"
+                    height="25px"
                   />
                 </LanguageSwitch>
               </LanguageSwitchContainer>

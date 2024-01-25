@@ -3,7 +3,8 @@ import { Row, Col, Drawer } from "antd";
 import { withTranslation } from "react-i18next";
 import Container from "../../common/Container";
 import { SvgIcon } from "../../common/SvgIcon";
-import { Button } from "../../common/Button";
+import { CustomBtn } from "../../common/Button";
+
 import {
   HeaderSection,
   LogoContainer,
@@ -51,7 +52,7 @@ const Header = ({ t }: any) => {
           onClick={() => scrollTo("contact")}
         >
           <Span>
-            <Button>{t("Contact")}</Button>
+            <CustomBtn>{t("Contact")}</CustomBtn>
           </Span>
         </CustomNavLinkSmall>
       </>

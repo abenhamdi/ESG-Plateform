@@ -1,7 +1,7 @@
 import { Row, Col } from "antd";
 import { withTranslation } from "react-i18next";
 import { Slide } from "react-awesome-reveal";
-import { Button } from "../../common/Button";
+import { CustomBtn } from "../../common/Button";
 import { MiddleBlockSection, Content, ContentWrapper } from "./styles";
 
 interface MiddleBlockProps {
@@ -27,9 +27,9 @@ const MiddleBlock = ({ title, content, button, t }: MiddleBlockProps) => {
               <h6>{t(title)}</h6>
               <Content>{t(content)}</Content>
               {button && (
-                <Button name="submit" onClick={() => scrollTo("mission")}>
+                <CustomBtn name="submit" onClick={() => scrollTo("mission")}>
                   {t(button)}
-                </Button>
+                </CustomBtn>
               )}
             </Col>
           </ContentWrapper>

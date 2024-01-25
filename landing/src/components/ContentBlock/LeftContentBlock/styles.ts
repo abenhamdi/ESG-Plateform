@@ -16,6 +16,7 @@ export const Content = styled("p")`
 export const ContentWrapper = styled("div")`
   position: relative;
   max-width: 540px;
+  box-shadow: -30px 30px 11px 28px rgba(0,0,0,0.3);
 
   @media only screen and (max-width: 575px) {
     padding-top: 4rem;
