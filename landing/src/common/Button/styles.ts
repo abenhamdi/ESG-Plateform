@@ -59,11 +59,11 @@ export const Btn =styled.button`
   width: 150px;
   height: 55px;
   border-radius: 45px;
-  border: none;
+  border: yes;
   background-color: #ff5a98;
   color: white;
   box-shadow: 0px 10px 10px #ff5a98 inset,
-    0px 5px 10px #ff5a98,
+    0px 5px 10px #ff5a98 inset,
     0px -10px 10px #ff5a98 inset;
   cursor: pointer;
   display: center;
@@ -74,7 +74,6 @@ export const Btn =styled.button`
   &::after {
     width: 70%;
     height: 2px;
-    position: absolute;
     content: "";
     filter: blur(1px);
     border-radius: 50%;

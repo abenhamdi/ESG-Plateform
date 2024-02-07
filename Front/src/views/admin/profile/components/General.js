@@ -1,88 +1,73 @@
-// Chakra imports
-import { SimpleGrid,Flex,
-  Table,
-  Progress,
-  Icon,
-  Tbody,
-  Td,
-  Text,
-  Th,
-  Thead,
-  Tr, useColorModeValue } from "@chakra-ui/react";
-  import {
-    useGlobalFilter,
-    usePagination,
-    useSortBy,
-    useTable,
-  } from "react-table";
-// Custom components
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useHistory } from "react-router-dom";
+import { SimpleGrid, Text } from "@chakra-ui/react";
 import Card from "components/card/Card.js";
-import React, {useMemo}from "react";
 import Information from "views/admin/profile/components/Information";
-import IconBox from "components/icons/IconBox";
-import {
-  MdAddTask,
-  MdCloud,
-  MdBarChart,
-  MdFileCopy,
-} from "react-icons/md"
 
-
-// Assets
-import { MdCheckCircle, MdCancel, MdOutlineError } from "react-icons/md";
 export default function GeneralInformation(props) {
-  const { ...rest} = props;
-  // Chakra Color Mode
-  const textColorPrimary = useColorModeValue("secondaryGray.900", "white");
-  const textColorSecondary = "gray.400";
-  const cardShadow = useColorModeValue(
-    "0px 18px 40px rgba(112, 144, 176, 0.12)",
-    "unset"
-  );
+  const { ...rest } = props;
+  const history = useHistory();
+  const [cardShadow, setCardShadow] = useState({});
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const EsgmetricIds = ['1', '2', '3', '4', '5', '6'];
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.get('https://api.mifril.com/api/Mifril/{ID}');
+      if (res.data.length === 0) {
+        setErrorMessage("ID not found");
+      } else {
+        history.push('/admin/dashboard');
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+  setInterval(console.log('cardShadow', cardShadow), 100000);
+  useEffect(() => {
+    const fetchCardShadows = async () => {
+      const shadowData = {};
+
+      for (const EsgmetricId of EsgmetricIds) {
+        try {
+          const response = await axios.get(
+            `${process.env.REACT_APP_BACKEND}api/Mifril/${EsgmetricId}`
+          );
+          const data = response.data;
+          shadowData[EsgmetricId] = { sector_activity: data.sector_activity, code: data.code };
+        } catch (error) {
+          console.error(`Error fetching card shadow for ${EsgmetricId}:`, error);
+        }
+      }
+      setCardShadow(shadowData);
+    };
+
+    fetchCardShadows();
+  }, [EsgmetricIds]);
+
   return (
     <Card mb={{ base: "0px", "2xl": "20px" }} {...rest}>
-      <Text
-        color={textColorPrimary}
-        fontWeight='bold'
-        fontSize='2xl'
-        mt='10px'
-        mb='4px'>
+      <form onSubmit={handleSubmit}>
+        <button type="submit">Submit</button>
+      </form>
+      <Text fontWeight='bold' fontSize='2xl' mt='10px' mb='4px'>
         Badge progress
       </Text>
-      <Text color={textColorSecondary} fontSize='md' me='26px' mb='40px'>
+      <Text fontSize='md' me='26px' mb='40px'>
         Win, earn, and share your MIFRIL path to help get a better planet 
       </Text>
       <SimpleGrid columns='2' gap='20px'>
-        <Information
-          boxShadow={cardShadow}
-          title='Management of Chemicals in Products'
-          value='CG-AA-250a.1'
-        />
-        <Information
-          boxShadow={cardShadow}
-          title='Environmental impacts in the Supply Chain'
-          value='CG-AA-430a.1'
-        />
-        <Information
-          boxShadow={cardShadow}
-          title='Labour Conditions in the Suppy Chain'
-          value='CG-AA-430b.2'
-        />
-        <Information
-          boxShadow={cardShadow}
-          title='Raw Materials Sourcing'
-          value='CG-AA-440a.3'
-        />
-        <Information
-          boxShadow={cardShadow}
-          title='Product Safety'
-          value='CG-AM-250a.1'
-        />
-        <Information
-          boxShadow={cardShadow}
-          title='Product Lifecyle Environnmental Impacts'
-          value='CG-AM-410a.1'
-        />
+        {EsgmetricIds.map(ID => (
+          <Information
+            key={ID}
+            boxShadow={cardShadow[ID] || "defaultShadowValue"}
+            title={cardShadow[ID]?.sector_activity || "Default Title"}
+            value={cardShadow[ID]?.code || "Default Code"}
+          />
+        ))}
       </SimpleGrid>
     </Card>
   );

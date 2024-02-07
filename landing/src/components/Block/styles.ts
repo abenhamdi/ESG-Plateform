@@ -16,7 +16,7 @@ export const TextWrapper = styled("div")`
 export const ContentWrapper = styled("div")`
   position: relative;
   max-width: 540px;
-  box-shadow: -10px 30px 11px 28px rgba(0,0,0,0.3);
+  box-shadow: -10px 30px 11px 28px rgba(0,0,0,0.15);
 
   @media only screen and (max-width: 575px) {
     padding-bottom: 4rem;

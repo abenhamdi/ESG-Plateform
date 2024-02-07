@@ -51,6 +51,29 @@ const Footer = ({ t }: any) => {
               <Para>Paris, France</Para>
             </Col>
             <Col lg={6} md={6} sm={12} xs={12}>
+            <Title> {t("Our Team")}</Title>
+              <Large left="true" to="/">
+                <a href="https://www.linkedin.com/in/pkkirsch/">
+                {t("Kelly KIRSCH - Co-Founder")}
+                </a>
+              </Large>
+              <Large left="true" to="/">
+              <a href="https://www.linkedin.com/in/mavrick-galand/">
+                {t("Mavrick GALAND - Co-Founder")}
+                </a>
+              </Large>
+              <Large left="true" to="/">
+              <a href="https://www.linkedin.com/in/oualid-a-775291147/">
+                {t("Oualid ANKIR - Co-Founder")}
+                </a>
+              </Large>
+              <Large left="true" to="/">
+              <a href="https://www.linkedin.com/in/ayoub-benhamdi-a4abaa19b/">
+                {t("Ayoub BENHAMDI - Co-Founder")}
+                </a>
+              </Large>
+            </Col>
+            <Col lg={6} md={6} sm={12} xs={12}>
               <Language>{t("Contact")}</Language>
               <Large to="/">{t("Tell us everything")}</Large>
               <Para>
@@ -61,8 +84,7 @@ const Footer = ({ t }: any) => {
               </a>
             </Col>
             <Col lg={6} md={6} sm={12} xs={12}>
-              <Label htmlFor="select-lang">{t("Language")}</Label>
-              <Title></Title>
+              
               <LanguageSwitchContainer>
                 <LanguageSwitch onClick={() => handleChange("en")}>
                   <SvgIcon

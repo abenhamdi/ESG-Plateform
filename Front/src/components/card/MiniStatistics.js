@@ -1,5 +1,4 @@
 // Chakra imports
-// Chakra imports
 import {
   Flex,
   Stat,
