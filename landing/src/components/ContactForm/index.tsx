@@ -27,12 +27,12 @@ const Contact = ({ title, content, id, t }: ContactProps) => {
   return (
     <ContactContainer id={id}>
       <Row justify="space-between" align="middle">
-        <Col lg={12} md={11} sm={24} xs={24}>
+        <Col lg={24} md={11} sm={24} xs={24}>
           <Slide direction="left">
-            <Block title={title} content={content} />
+            <Block title={title} content={content}  />
           </Slide>
         </Col>
-        <Col lg={12} md={12} sm={24} xs={24}>
+        <Col lg={24} md={12} sm={24} xs={24}>
           <Slide direction="right">
             <FormGroup autoComplete="off" onSubmit={handleSubmit}>
               <Col span={24}>
@@ -53,7 +53,7 @@ const Contact = ({ title, content, id, t }: ContactProps) => {
                   value={values.email || ""}
                   onChange={handleChange}
                 />
-                <ValidationType type="email" />
+                <ValidationType type="email"  />
               </Col>
               <Col span={24}>
                 <TextArea

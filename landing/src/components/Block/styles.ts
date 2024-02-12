@@ -10,6 +10,7 @@ export const Container = styled("div")`
 `;
 
 export const TextWrapper = styled("div")`
+  display: flex;
   border-radius: 3rem;
   max-width: 400px;
 `;
@@ -21,4 +22,11 @@ export const ContentWrapper = styled("div")`
   @media only screen and (max-width: 575px) {
     padding-bottom: 4rem;
   }
-`;
+`
+;
+export const Blockstyled = styled("div")`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  `;

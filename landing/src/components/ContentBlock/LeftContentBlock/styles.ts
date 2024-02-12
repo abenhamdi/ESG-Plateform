@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const LeftContentSection = styled("section")`
   position: relative;
-  padding: 10rem 0 8rem;
+  
 
   @media only screen and (max-width: 1024px) {
     padding: 4rem 0 4rem;
@@ -20,7 +20,7 @@ export const ContentWrapper = styled("div")`
   box-shadow: -30px 30px 11px 28px rgba(0,0,0,0.15);
 
   @media only screen and (max-width: 575px) {
-    padding-top: 4rem;
+    padding-top: 0rem;
   }
 `;
 
@@ -35,7 +35,7 @@ export const MinTitle = styled("h6")`
   line-height: 1rem;
   padding: 0.5rem 0;
   text-transform: uppercase;
-  color: #000;
+  color: #FFFFFF;
   font-family: "Motiva Sans Light", sans-serif;
 `;
 

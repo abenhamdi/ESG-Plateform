@@ -61,7 +61,7 @@ const Header = ({ t }: any) => {
 
   return (
     <HeaderSection>
-      <Container>
+        <div style={{margin:"auto"}}> 
         <Row justify="space-between">
           <LogoContainer to="/" aria-label="homepage">
             <SvgIcon src="logo.svg" width="125px" height="19px" />
@@ -86,7 +86,7 @@ const Header = ({ t }: any) => {
           </Col>
           <MenuItem />
         </Drawer>
-      </Container>
+        </div>
     </HeaderSection>
   );
 };
